@@ -1,0 +1,48 @@
+预处理关键字要包裹在(% .. %)
+左右括号和百分号之间不能有空格
+
+(%if expr%)
+
+(%elif expr%)
+
+(%else%)
+
+(%endif%)
+
+(%is_defined X%)
+
+XX (%concat%) YY
+宏体内等价于 C 的 ##：粘贴左右两侧，实参不展开；
+空实参视为 placemarker；粘贴结果会被重新扫描展开。
+
+(%to_string%) MMM
+宏体内等价于 C 的 #：stringize 整个实参（不是单个 token），
+按源码相邻关系保留空白、转义 \ 与 " 并生成字符串字面量；
+实参为空时得到 ""。
+
+(%va_args%)
+
+(%va_opt(,)%)
+
+(%eval expr%)
+
+(%repeat times_expr, body%)
+
+(%undefine MM%)
+
+(%get_counter%)
+
+(%error "msg"%)
+
+(%warning "msg"%)
+
+(%object_macro MM 1+100%)
+
+(%function_macro KK(a) printf(a)%)
+
+(%include "path/to/file"%)
+
+(%include_string "path/to/file"%)
+
+(%include_bytes "path/to/file"%)
+
